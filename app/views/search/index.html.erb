@@ -1,1 +1,10 @@
 <h1>Number of people in <%= @nation %>: <%= @json.count %></h1>
+<% @json.each do |member| %>
+  <section id="member-<%= member[:_id] %>">
+    <h3>Member Name: <%= member[:name] %></h3>
+    <p>Allies: <%= member[:allies] if member[:allies].any? %></p>
+    <p>Enemies: <%= member[:enemies] if member[:enemies].any? %></p>
+    <p>Affiliation: <%= member[:affiliation] if member[:affiliation].present? %></p>
+    <%= image_tag "#{member[:photoUrl]}" %>
+  </section>
+<% end %>
