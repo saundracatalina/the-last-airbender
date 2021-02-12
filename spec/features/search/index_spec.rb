@@ -7,10 +7,12 @@ describe 'search_path for nations' do
     click_button 'Search For Members'
     expect(current_path).to eq(search_path)
 
-
+    expect(page).to have_content("Number of people in fire_nation: 97")
   end
 
-  it 'can see a list with detailed info for the first 25 members of Fire Nation'
+  it 'can see a list with detailed info for the first 25 members of Fire Nation' do
+
+  end
 #   And for each of the members I should see:
 # - The name of the member (and their photo, if they have one)
 # - The list of allies or "None"
